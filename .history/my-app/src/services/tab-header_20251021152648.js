@@ -1,2 +1,0 @@
-import './Tab-header.css'
-
