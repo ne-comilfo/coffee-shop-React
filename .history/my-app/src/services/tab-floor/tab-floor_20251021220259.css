@@ -1,0 +1,30 @@
+.floor {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    width: 100%;
+    justify-content: center;
+    align-items
+}
+
+.floor-options {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.link {
+    margin-right: 5px;
+}
+
+.beans-logo {
+    width: 200px;
+    height: 29.3px;
+}

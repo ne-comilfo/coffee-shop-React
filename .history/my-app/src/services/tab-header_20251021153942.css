@@ -1,0 +1,12 @@
+.header {
+    height: 80px;
+    width: 100%;
+    border: 1px pink solid;
+}
+
+.header-options {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    border: 1px black solid;
+}

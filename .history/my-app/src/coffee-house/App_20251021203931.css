@@ -1,0 +1,11 @@
+.main-bg {
+  height: 35vh;
+  margin-left: -10px;
+  background-image: url('../imgs/main-bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

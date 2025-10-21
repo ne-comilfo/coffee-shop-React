@@ -1,0 +1,22 @@
+.floor {
+    d
+    height: 150px;
+    width: 100%;
+}
+
+.floor-options {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+img {
+    margin-right: 5px;
+}

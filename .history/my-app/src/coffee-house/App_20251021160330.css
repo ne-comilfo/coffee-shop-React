@@ -1,0 +1,7 @@
+.main-bg {
+  height: 100vh; /* 100% высоты видимого экрана */
+  background-image: url('../imgs/');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

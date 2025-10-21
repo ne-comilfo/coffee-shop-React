@@ -1,0 +1,23 @@
+.floor {
+    height: 150px;
+    width: 100%;
+}
+
+.header-options {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+    margin-left: 76px;
+    margin-top: 15;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+img {
+    margin-right: 5px;
+}

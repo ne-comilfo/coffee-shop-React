@@ -1,0 +1,13 @@
+.header {
+    height: 80px;
+    width: 100%;
+}
+
+.header-options {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    border: 1px black solid;
+    align-items: center;
+}
