@@ -2,6 +2,17 @@
     height: 80px;
     width: 100%;
 
+    button {
+        background: none;
+        border: none;
+        color: inherit;
+        font: inherit;
+        cursor: pointer;
+        padding: 0;
+        text-decoration: none;
+        color: white;
+    }
+
     .header-options {
         height: 100%;
         display: flex;
@@ -10,11 +21,6 @@
         align-items: center;
         margin-left: 76px;
         margin-top: 15;
-
-        a {
-            text-decoration: none;
-            color: white;
-        }
 
         img {
             margin-right: 5px;
