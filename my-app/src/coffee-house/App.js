@@ -2,6 +2,8 @@ import './App.scss';
 
 import TabHeader from '../services/tab-header/tab-header';
 import TabFloor from '../services/tab-floor/tab-floor';
+import OurCofeee from '../our-coffee/our-coffee';
+import ForPleasure from '../pleasure/pleasure';
 
 import beansLogo from '../imgs/beans-logo.svg';
 import beansLogoBrown from '../imgs/beans-logo-brown.svg';
@@ -87,13 +89,13 @@ class App extends Component {
 
   renderOurCoffee() {
     return (
-      <></>
+      <OurCofeee onChange={this.changePage} />
     );
   }
 
   renderPleasure() {
     return (
-      <></>
+      <ForPleasure onChange={this.changePage}/>
     );
   }
 
