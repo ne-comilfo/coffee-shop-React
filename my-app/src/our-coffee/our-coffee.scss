@@ -1,0 +1,148 @@
+.app {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.app-header {
+    background-image: url('../imgs/our-coffee/our-coffee-bg.svg');
+    height: 23vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    .title {
+        color: white;
+        font-size: 40px;
+        align-self: center;
+        margin-left: 45vw;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-product {
+    margin-top: 62px;
+    display: flex;
+    flex-direction: row;
+    min-width: 100vw;
+    justify-content: center;
+    gap: 70px;
+
+    .title-text {
+        display: flex;
+        flex-direction: column;
+        width: 346px;
+        height: 355px;
+        align-items: center;
+
+        img {
+            transform: scale(0.7);
+        }
+
+        .title {
+            font-size: 24px;
+        }
+
+        .text {
+            margin-top: 20px;
+            text-align: center;
+        }
+    }
+
+    img {
+        width: 272px;
+        height: 355px;
+    }
+}
+
+.products {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .groups {
+        display: flex;
+        flex-direction: row;
+        gap: 83px;
+        font-size: 14px;
+
+        .search-group {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
+
+            .buttons {
+                display: flex;
+                flex-direction: row;
+                gap: 5px;
+
+                button {
+                    border: none;
+                    background: white;
+                    width: 75px;
+                    height: 30px;
+                    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.25);
+                }
+            }
+        }
+    }
+
+    .product-cards {
+        margin-top: 50px;
+        gap: 71px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        .product-cards-item {
+            cursor: pointer;
+            border-radius: 3px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            width: 220px;
+            height: 260px;
+            box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.25);
+
+            img {
+                width: 167px;
+                height: 115px;
+            }
+
+            .params {
+                gap: 10px;
+                width: 167px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                .name,
+                .price,
+                .country {
+                    font-size: 14px;
+                }
+
+                .price {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}

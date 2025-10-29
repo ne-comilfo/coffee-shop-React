@@ -7,6 +7,8 @@
     align-items: center;
 
     button {
+        display: flex;
+        align-items: flex-end;
         background: none;
         border: none;
         color: inherit;
@@ -15,6 +17,7 @@
         padding: 0;
         text-decoration: none;
         color: black;
+        height: 35px;
     }
 
     .floor-options {
@@ -23,12 +26,11 @@
         gap: 20px;
         align-items: center;
         margin-bottom: 15px;
-    }
 
-    .link-img {
-        margin-right: 5px;
-        width: 35px;
-        height: 35px;
+        .link-img {
+            align-self: flex-start;
+            height: 29px;
+        }
     }
 
     .beans-logo {

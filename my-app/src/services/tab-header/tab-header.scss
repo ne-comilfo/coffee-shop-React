@@ -3,6 +3,8 @@
     width: 100%;
 
     button {
+        display: flex;
+        align-items: flex-end;
         background: none;
         border: none;
         color: inherit;
@@ -11,6 +13,7 @@
         padding: 0;
         text-decoration: none;
         color: white;
+        height: 35px;
     }
 
     .header-options {
@@ -23,7 +26,8 @@
         margin-top: 15;
 
         img {
-            margin-right: 5px;
+            align-self: flex-start;
+            height: 29px;
         }
     }
 }
