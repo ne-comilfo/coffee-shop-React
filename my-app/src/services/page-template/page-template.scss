@@ -6,7 +6,6 @@
 }
 
 .app-header {
-    background-image: url('../imgs/our-coffee/our-coffee-bg.svg');
     height: 23vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -16,7 +15,7 @@
         color: white;
         font-size: 40px;
         align-self: center;
-        margin-left: 45vw;
+        justify-self: center;
     }
 }
 
@@ -73,12 +72,16 @@
         flex-direction: row;
         gap: 83px;
         font-size: 14px;
-
+        margin-bottom: 50px;
         .search-group {
             display: flex;
             flex-direction: row;
             gap: 20px;
             align-items: center;
+
+            input {
+                outline: none;
+            }
         }
 
         .filter-group {
@@ -104,7 +107,6 @@
     }
 
     .product-cards {
-        margin-top: 50px;
         gap: 71px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);

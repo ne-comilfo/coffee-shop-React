@@ -1,5 +1,5 @@
 import './tab-header.scss';
-import beans from '../../imgs/coffee-beans.svg';
+import beans from '../../imgs/house/coffee-beans.svg';
 
 import { Component } from 'react'
 

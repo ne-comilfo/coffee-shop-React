@@ -5,11 +5,11 @@ import TabFloor from '../services/tab-floor/tab-floor';
 import OurCofeee from '../our-coffee/our-coffee';
 import ForPleasure from '../pleasure/pleasure';
 
-import beansLogo from '../imgs/beans-logo.svg';
-import beansLogoBrown from '../imgs/beans-logo-brown.svg';
-import photo1 from '../imgs/coffee1.svg';
-import photo2 from '../imgs/coffee2.svg';
-import photo3 from '../imgs/coffee3.svg';
+import beansLogo from '../imgs/house/beans-logo.svg';
+import beansLogoBrown from '../imgs/house/beans-logo-brown.svg';
+import photo1 from '../imgs/house/coffee1.svg';
+import photo2 from '../imgs/house/coffee2.svg';
+import photo3 from '../imgs/house/coffee3.svg';
 
 import { Component } from 'react';
 

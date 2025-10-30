@@ -1,8 +1,8 @@
 import './tab-floor.scss';
 
 import { Component } from 'react';
-import beansLogo from '../../imgs/beans-logo-brown.svg';
-import beans from '../../imgs/coffee-beans-black.svg';
+import beansLogo from '../../imgs/house/beans-logo-brown.svg';
+import beans from '../../imgs/house/coffee-beans-black.svg';
 
 class TabFloor extends Component {
     constructor(props) {
