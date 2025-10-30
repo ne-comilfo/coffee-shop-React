@@ -13,8 +13,8 @@ class TabHeader extends Component {
             <div className='header'>
                 <div className="header-options">
                     <button onClick={() => { onChange('home') }}><img src={beans} alt='beans' />Coffee house</button>
-                    <button onClick={() => { onChange('ourCoffee') }}>Our coffee</button>
-                    <button onClick={() => { onChange('pleasure') }}>For your pleasure</button>
+                    <button onClick={() => { onChange('our-coffee') }}>Our coffee</button>
+                    <button onClick={() => { onChange('for-your-pleasure') }}>For your pleasure</button>
                 </div>
             </div>
         );

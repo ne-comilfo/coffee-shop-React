@@ -11,7 +11,7 @@ class ForPleasure extends Component {
         super(props);
     }
     render() {
-        const { onChange } = this.props;
+        const { onChange, changeProduct } = this.props;
         const text = `<p>Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.</p>
                                 <p>Afraid at highly months do things on at. Situation recommend objection do intention <br/> so questions. <br/>
                                 As greatly removed calling pleased improve an. <br/>
@@ -19,7 +19,7 @@ class ForPleasure extends Component {
         `;
         return (
             <PageTemplate
-                {...{ onChange, headerTitle: 'For your pleasure', previewCoffee, productTitle: 'About our goods', productText: text, pageName: 'pleasure', coffeeImg, bgImg }}
+                {...{ onChange, changeProduct, headerTitle: 'For your pleasure', previewCoffee, productTitle: 'About our goods', productText: text, pageName: 'for-your-pleasure', coffeeImg, bgImg }}
             />
         );
     }

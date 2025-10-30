@@ -14,8 +14,8 @@ class TabFloor extends Component {
             <div className='floor'>
                 <div className="floor-options">
                     <button onClick={() => {onChange('home')}}><img src={beans} alt='beans' className='link-img' />Coffee house</button>
-                    <button onClick={() => {onChange('ourCoffee')}}>Our coffee</button>
-                    <button onClick={() => {onChange('pleasure')}}>For your pleasure</button>
+                    <button onClick={() => {onChange('our-coffee')}}>Our coffee</button>
+                    <button onClick={() => {onChange('for-your-pleasure')}}>For your pleasure</button>
                 </div>
                 <img src={beansLogo} alt='coffee&lines' className='beans-logo' />
             </div>
