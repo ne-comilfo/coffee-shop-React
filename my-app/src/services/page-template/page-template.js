@@ -11,11 +11,36 @@ import { Component } from 'react';
 class PageTemplate extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            btnsClickCount: { 'Brazil': 0, 'Columbia': 0, 'Kenya': 0 }
+        }
+    }
+
+    getFilteredCards(products) {
+        return products.map(product => (
+            <button
+                data-number={product.id}
+                key={product.id}
+                className="product-cards-item"
+                onClick={() => {
+                    this.props.onChange('about-coffee');
+                    this.props.changeProduct(product.id);
+                }}
+            >
+                <img src={product.img} alt={product.name} />
+                <div className="params">
+                    <div className="name">{product.name}</div>
+                    <div className="country">{product.country}</div>
+                    <div className="price">{product.price}</div>
+                </div>
+            </button>
+        ));
     }
 
     render() {
-        const { onChange, changeProduct } = this.props;
-        const { headerTitle, previewCoffee, productTitle, productText, pageName, coffeeImg, bgImg } = this.props;
+        const { onChange, changeFilter, changeInput } = this.props;
+        const { headerTitle, previewCoffee, productTitle, productText, pageName, bgImg } = this.props;
+        const { btnsClickCount } = this.state;
         return (
             <div className="app">
                 <div className="app-header" style={{ backgroundImage: `url(${bgImg})` }}>
@@ -28,7 +53,7 @@ class PageTemplate extends Component {
                         <div className="title-text">
                             <div className="title">{productTitle}</div>
                             <img src={beansLogoBrown} alt="line" />
-                            <div className="text" style={{textAlign: pageName === 'about-coffee' ? 'left' : 'center'}}><div dangerouslySetInnerHTML={{ __html: productText }} /></div>
+                            <div className="text" style={{ textAlign: pageName === 'about-coffee' ? 'left' : 'center' }}><div dangerouslySetInnerHTML={{ __html: productText }} /></div>
                         </div>
                     </div>
                     <img src={line} alt="line" style={{ display: pageName === 'about-coffee' ? 'none' : 'block' }} />
@@ -39,98 +64,38 @@ class PageTemplate extends Component {
                         <div className="groups">
                             <div className="search-group">
                                 <label htmlFor='search'>Looking for</label>
-                                <input type="search" name="search" id="search" placeholder='start typing here...' />
+                                <input type="search" onChange={(e) => { changeInput(e.target.value) }} name="search" id="search" placeholder='start typing here...' />
                             </div>
                             <div className="filter-group">
                                 <div className="title">Or filter</div>
                                 <div className="buttons">
-                                    <button type="button">Brazil</button>
-                                    <button type="button">Kenya</button>
-                                    <button type="button">Columbia</button>
+                                    <button type="button" onClick={(e) => {
+                                        btnsClickCount[e.target.textContent]++;
+                                        if (btnsClickCount[e.target.textContent] % 2 === 1) changeFilter(e.target.textContent);
+                                        else changeFilter('');
+                                    }}>Brazil</button>
+                                    <button type="button" onClick={(e) => {
+                                        btnsClickCount[e.target.textContent]++;
+                                        if (btnsClickCount[e.target.textContent] % 2 === 1) changeFilter(e.target.textContent);
+                                        else changeFilter('');
+                                    }}>Kenya</button><button type="button" onClick={(e) => {
+                                        btnsClickCount[e.target.textContent]++;
+                                        if (btnsClickCount[e.target.textContent] % 2 === 1) changeFilter(e.target.textContent);
+                                        else changeFilter('');
+                                    }}>Columbia</button>
                                 </div>
-
                             </div>
                         </div>
                     )}
 
                     <div className="product-cards">
-                        <button className="product-cards-item" data-number='1' onClick={() => {
-                            onChange('about-coffee');
-                            changeProduct(1);
-                        }}>
-                            <img src={coffeeImg} alt="coffee" />
-                            <div className="params">
-                                <div className="name">AROMISTICO Coffee 1 kg</div>
-                                <div className="country">Brazil</div>
-                                <div className="price">6.99$</div>
-                            </div>
-                        </button>
-
-                        <button className="product-cards-item" data-number='2' onClick={() => {
-                            onChange('about-coffee');
-                            changeProduct(2);
-                        }}>
-                            <img src={coffeeImg} alt="coffee" />
-                            <div className="params">
-                                <div className="name">AROMISTICO Coffee 1 kg</div>
-                                <div className="country">Kenya</div>
-                                <div className="price">6.99$</div>
-                            </div>
-                        </button>
-
-                        <button className="product-cards-item" data-number='3' onClick={() => {
-                            onChange('about-coffee');
-                            changeProduct(3);
-                        }}>
-                            <img src={coffeeImg} alt="coffee" />
-                            <div className="params">
-                                <div className="name">AROMISTICO Coffee 1 kg</div>
-                                <div className="country">Columbia</div>
-                                <div className="price">6.99$</div>
-                            </div>
-                        </button>
-
-                        <button className="product-cards-item" data-number='4' onClick={() => {
-                            onChange('about-coffee');
-                            changeProduct(4);
-                        }}>
-                            <img src={coffeeImg} alt="coffee" />
-                            <div className="params">
-                                <div className="name">AROMISTICO Coffee 1 kg</div>
-                                <div className="country">Brazil</div>
-                                <div className="price">6.99$</div>
-                            </div>
-                        </button>
-
-                        <button className="product-cards-item" data-number='5' onClick={() => {
-                            onChange('about-coffee');
-                            changeProduct(5);
-                        }}>
-                            <img src={coffeeImg} alt="coffee" />
-                            <div className="params">
-                                <div className="name">AROMISTICO Coffee 1 kg</div>
-                                <div className="country">Brazil</div>
-                                <div className="price">6.99$</div>
-                            </div>
-                        </button>
-
-                        <button className="product-cards-item" data-number='6' onClick={() => {
-                            onChange('about-coffee');
-                            changeProduct(6);
-                        }}>
-                            <img src={coffeeImg} alt="coffee" />
-                            <div className="params">
-                                <div className="name">AROMISTICO Coffee 1 kg</div>
-                                <div className="country">Brazil</div>
-                                <div className="price">6.99$</div>
-                            </div>
-                        </button>
-
+                        {this.getFilteredCards(this.props.products)}
                     </div>
                 </div>
-                )}
+                )
+                }
                 <TabFloor onChange={onChange} />
-            </div>
+            </div >
         );
     }
 }

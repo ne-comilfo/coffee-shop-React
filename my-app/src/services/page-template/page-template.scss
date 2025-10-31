@@ -112,6 +112,8 @@
         gap: 71px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        height: 600px;
+        min-height: 600px;
 
         button {
             background: white;

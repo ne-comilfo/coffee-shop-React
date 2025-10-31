@@ -21,6 +21,8 @@ class App extends Component {
     this.state = {
       page: 'home',
       selectedProduct: null,
+      inputValue: '',
+      filter: '',
       products: [
         { id: 1, country: 'Brazil', price: '6.99$', description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis  nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat.`, img: coffeeImg },
         { id: 2, country: 'Kenya', price: '6.99$', description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis  nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat.`, img: coffeeImg },
@@ -41,10 +43,27 @@ class App extends Component {
     );
   }
 
+  changeInput = (inputValue) => {
+    this.setState({ inputValue: inputValue });
+  }
+
+  changeFilter = (filterName) => {
+    this.setState({ filter: filterName });
+  }
+
   changePage = (pageName) => {
-    this.setState({ page: pageName });
+    this.setState({ page: pageName, filter: '', inputValue: '' });
     window.history.pushState({ page: pageName }, '', `/${pageName}`);
   };
+
+  getFilteredProducts = () => {
+    const { products, filter, inputValue } = this.state;
+    return products.filter(p => {
+      const matchesCountryFilter = filter ? p.country.toLowerCase() === filter.toLowerCase() : true;
+      const matchesSearch = inputValue ? p.country.toLowerCase().includes(inputValue.toLowerCase()) : true;
+      return matchesCountryFilter && matchesSearch;
+    });
+  }
 
   componentDidMount() {
     window.addEventListener('popstate', this.handlePopState);
@@ -77,7 +96,6 @@ class App extends Component {
 
     this.setState({ page: path, selectedProduct: id });
   };
-
 
   renderHome() {
     return (
@@ -143,13 +161,24 @@ class App extends Component {
 
   renderOurCoffee() {
     return (
-      <OurCofeee onChange={this.changePage} changeProduct={this.changeProduct} />
+      <OurCofeee
+        onChange={this.changePage}
+        changeProduct={this.changeProduct}
+        changeFilter={this.changeFilter}
+        changeInput={this.changeInput}
+        products={this.getFilteredProducts()}
+      />
     );
   }
 
   renderPleasure() {
     return (
-      <ForPleasure onChange={this.changePage} changeProduct={this.changeProduct} />
+      <ForPleasure
+        onChange={this.changePage}
+        changeProduct={this.changeProduct}
+        changeFilter={this.changeFilter}
+        changeInput={this.changeInput}
+        products={this.getFilteredProducts()} />
     );
   }
 

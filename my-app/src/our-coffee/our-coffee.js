@@ -11,7 +11,7 @@ class OurCofeee extends Component {
         super(props);
     }
     render() {
-        const { onChange, changeProduct } = this.props;
+        const { onChange, changeProduct, changeFilter, changeInput, products } = this.props;
         const text = `<p>Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.</p>
                                 <p>Afraid at highly months do things on at. Situation recommend objection do intention <br/> so questions. <br/>
                                 As greatly removed calling pleased improve an. <br/>
@@ -19,7 +19,7 @@ class OurCofeee extends Component {
         `;
         return (
             <PageTemplate
-                {...{ onChange, changeProduct, headerTitle: 'Our coffee', previewCoffee, productTitle: 'About our beans', productText: text, pageName: 'our-coffee', coffeeImg, bgImg }}
+                {...{ onChange, products, changeFilter, changeInput, changeProduct, headerTitle: 'Our coffee', previewCoffee, productTitle: 'About our beans', productText: text, pageName: 'our-coffee', coffeeImg, bgImg }}
             />
         );
     }
